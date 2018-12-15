@@ -83,7 +83,8 @@ void inputMember(CLASS *c_class)
         c_class->s_student[i]->pointAll =(0.3*c_class->s_student[i]->pointMiddle) + (0.7*c_class->s_student[i]->pointEnd);
         rankAccept(c_class->s_student[i]->pointAll,c_class->s_student[i]->rank);
     }
-
+    fclose(f_member);
+    fclose(f_point);
 }
 void printList(CLASS *c_class){
         printf("%-10s|%-20s|%-30s|%-10s|%-5s\n","STT","KEY"," NAME","POINT","RANK");
