@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-typedef struct{
+typedef struct
+{
     char key[10];
     char name[30];
     float pointMiddle;
@@ -10,28 +11,37 @@ typedef struct{
     char rank[3];
 } STUDENT;
 
-typedef struct{
+typedef struct
+{
     STUDENT *s_student[100];
     char className[10];
     int numberMember;
 } CLASS;
-void deleteNewline(char prop[]){
+void deleteNewline(char prop[])
+{
     prop[strlen(prop)-1] ='\0';
 }
-void rankAccept(float prop,char t_rank[]){
-    if(prop < 4.0){
+
+void rankAccept(float prop,char t_rank[])
+{
+    if(prop < 4.0)
+    {
         strcpy(t_rank,"F");
     }
-    else if((prop > 4.0) && (prop <5.5)){
+    else if((prop >= 4.0) && (prop <5.5))
+    {
         strcpy(t_rank,"D");
     }
-    else if((prop > 5) && (prop <7)){
+    else if((prop >= 5.5) && (prop <7))
+    {
         strcpy(t_rank,"C");
     }
-    else if((prop > 7) &&( prop <8)){
+    else if((prop >= 7) &&( prop <8))
+    {
         strcpy(t_rank,"B");
     }
-    else if((prop > 8) && (prop < 10)){
+    else if((prop >= 8) && (prop < 10))
+    {
         strcpy(t_rank,"A");
     }
 
@@ -94,11 +104,15 @@ void filterMember(STUDENT *prop[], int n){
     }
     }
 }
-void sortList(STUDENT *prop[], int n){
+void sortList(STUDENT *prop[], int n)
+{
   STUDENT *temp;
-  for(int i = 0; i < n-1;i++){
-    for(int j = i+1;j < n;j++){
-      if(prop[i]->pointAll < prop[j]->pointAll){
+  for(int i = 0; i < n-1;i++)
+  {
+    for(int j = i+1;j < n;j++)
+    {
+      if(prop[i]->pointAll < prop[j]->pointAll)
+      {
           temp    = prop[i];
           prop[i] = prop[j];
           prop[j] = temp;
